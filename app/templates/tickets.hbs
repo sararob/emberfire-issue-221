@@ -1,0 +1,17 @@
+<div class="new-msg-link">{{#link-to 'tickets.new'}}Add a new ticket{{/link-to}}</div>
+
+{{outlet}}
+<h1>All tickets</h1>
+{{#each ticket in model}}
+    <div class="each-msg">
+        <span class="name">{{ticket.name}}</span>
+        {{input type="checkbox" checked=ticket.open action='ticketChecked'}}
+    </div>
+{{/each}}
+
+<h1>Open Tickets</h1>
+{{#each tickets as |ticket| }}
+    <div class="each-msg">
+        <span class="name">{{ticket.name}}</span>
+    </div>
+{{/each}}
